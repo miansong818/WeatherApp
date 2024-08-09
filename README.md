@@ -16,7 +16,8 @@ Screenshots:
 lg screen:
 ![image](https://github.com/user-attachments/assets/d33eb7ef-0f50-4e7e-ab65-410e77848bcc)
 sm screen:
-![image](https://github.com/user-attachments/assets/cb27735a-90fc-41cd-bf7d-b1ce6913549a)
+![image](https://github.com/user-attachments/assets/784f7e8e-5b1f-4c9c-8f09-87f68fbabd33)
+
 
 
 
