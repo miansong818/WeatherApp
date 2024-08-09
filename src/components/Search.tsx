@@ -18,13 +18,17 @@ export const SearchList = ({
   //debounced fetch API call
   const debouncedSearch = useCallback(
     debounce((searchTerm: any) => {
-      fetch(
-        `${process.env.VITE_API_GEO_URL}?q=${searchTerm}&limit=5&APPID=${process.env.VITE_API_KEY}`
-      )
-        .then((res) => res.json())
-        .then((result) => {
-          setResults(result);
-        });
+      try {
+        fetch(
+          `${process.env.VITE_API_GEO_URL}?q=${searchTerm}&limit=5&APPID=${process.env.VITE_API_KEY}`
+        )
+          .then((res) => res.json())
+          .then((result) => {
+            setResults(result);
+          });
+      } catch (e) {
+        console.log(e);
+      }
     }, 500),
     []
   );

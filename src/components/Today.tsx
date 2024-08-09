@@ -89,7 +89,7 @@ export default function Today({
                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-400">
                       Time:{" "}
                       {hourIdx === 0
-                        ? "Now"
+                        ? "Current"
                         : FormatHour(
                             currentHour.setHours(currentHour.getHours() + 1)
                           )}

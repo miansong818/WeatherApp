@@ -14,7 +14,6 @@ import { ErrorBoundary } from "react-error-boundary";
 import Error from "./components/Error";
 
 const initCurrentWeather: CurrentWeather = MockCurrentWeather;
-
 const hours: Hourly[] = MockHourlyData;
 const nextDays: Daily[] = MockDailyData;
 
@@ -29,13 +28,17 @@ function App() {
   // Fetch the weather location API, update the current weather state
   const fetchWeatherForCurrentLocation = async () => {
     const { lat, lon } = coordinates;
-    await fetch(
-      `${process.env.VITE_API_URL}/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        setCurrentWeather(result);
-      });
+    try {
+      await fetch(
+        `${process.env.VITE_API_URL}/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          setCurrentWeather(result);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   //get the current location coordinates on mount
@@ -47,21 +50,23 @@ function App() {
       });
     });
 
-    //
     await fetchWeatherForCurrentLocation();
   };
 
-  //
   const fetchData = async () => {
     const { lat, lon } = coordinates;
-    await fetch(
-      `${process.env.VITE_API_URL}/onecall?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        setNextHoursData(result.hourly);
-        setNextDaysData(result.daily);
-      });
+    try {
+      await fetch(
+        `${process.env.VITE_API_URL}/onecall?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
+      )
+        .then((res) => res.json())
+        .then((result) => {
+          setNextHoursData(result.hourly);
+          setNextDaysData(result.daily);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   //Update current weather when location coordinates updates
