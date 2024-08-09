@@ -16,7 +16,8 @@ Screenshots:
 lg screen:
 ![image](https://github.com/user-attachments/assets/d33eb7ef-0f50-4e7e-ab65-410e77848bcc)
 sm screen:
-![image](https://github.com/user-attachments/assets/da19e83e-960e-4b45-a4ca-567c5d177ba3)
+![image](https://github.com/user-attachments/assets/cb27735a-90fc-41cd-bf7d-b1ce6913549a)
+
 
 
 ## How to launch the Weather Application
