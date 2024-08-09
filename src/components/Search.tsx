@@ -1,75 +1,6 @@
 import { useCallback, useState, Suspense } from "react";
 import _, { debounce } from "lodash";
-import { Coordinates, LocationObject } from "../Types";
-
-const rest: LocationObject[] = [
-  {
-    name: "New York County",
-    local_names: {
-      ar: "نيويورك",
-      it: "New York",
-      uk: "Нью-Йорк",
-      es: "Nueva York",
-      en: "New York",
-      kn: "ನ್ಯೂಯೊರ್ಕ್",
-      be: "Нью-Ёрк",
-      eo: "Novjorko",
-      oc: "Nòva York",
-      ru: "Нью-Йорк",
-      el: "Νέα Υόρκη",
-      ko: "뉴욕",
-      cs: "New York",
-      cy: "Efrog Newydd",
-      he: "ניו יורק",
-      ja: "ニューヨーク",
-      zh: "纽约/紐約",
-      ca: "Nova York",
-      fa: "نیویورک",
-      fr: "New York",
-      is: "Nýja Jórvík",
-      hi: "न्यूयॊर्क्",
-      vi: "New York",
-      gl: "Nova York",
-      pt: "Nova Iorque",
-      te: "న్యూయొర్క్",
-      de: "New York",
-      pl: "Nowy Jork",
-    },
-    lat: 40.7127281,
-    lon: -74.0060152,
-    country: "US",
-    state: "New York",
-  },
-  {
-    name: "New York",
-    local_names: {
-      ta: "நியூ யோர்க்",
-      en: "New York",
-    },
-    lat: 55.0252998,
-    lon: -1.4869496,
-    country: "GB",
-    state: "England",
-  },
-  {
-    name: "New York",
-    local_names: {
-      ta: "நியூ யோர்க்",
-      en: "New York",
-    },
-    lat: 39.6852874,
-    lon: -93.9268836,
-    country: "US",
-    state: "Missouri",
-  },
-  {
-    name: "New York",
-    lat: 7.9631123,
-    lon: -11.7636869,
-    country: "SL",
-    state: "Bo District",
-  },
-];
+import { Coordinates } from "../Types";
 
 interface PropsType {
   searchFn: (v: Coordinates) => void;
@@ -88,9 +19,7 @@ export const SearchList = ({
   const debouncedSearch = useCallback(
     debounce((searchTerm: any) => {
       fetch(
-        `${import.meta.env.VITE_API_GEO_URL}?q=${searchTerm}&limit=5&APPID=${
-          import.meta.env.VITE_API_KEY
-        }`
+        `${process.env.VITE_API_GEO_URL}?q=${searchTerm}&limit=5&APPID=${process.env.VITE_API_KEY}`
       )
         .then((res) => res.json())
         .then((result) => {

@@ -30,11 +30,7 @@ function App() {
   const fetchWeatherForCurrentLocation = async () => {
     const { lat, lon } = coordinates;
     await fetch(
-      `${
-        import.meta.env.VITE_API_URL
-      }/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${
-        import.meta.env.VITE_API_KEY
-      }`
+      `${process.env.VITE_API_URL}/weather/?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -59,11 +55,7 @@ function App() {
   const fetchData = async () => {
     const { lat, lon } = coordinates;
     await fetch(
-      `${
-        import.meta.env.VITE_API_URL
-      }/onecall?lat=${lat}&lon=${lon}&units=metric&APPID=${
-        import.meta.env.VITE_API_KEY
-      }`
+      `${process.env.VITE_API_URL}/onecall?lat=${lat}&lon=${lon}&units=metric&APPID=${process.env.VITE_API_KEY}`
     )
       .then((res) => res.json())
       .then((result) => {
