@@ -36,5 +36,3 @@ export const GetDates = (count: number) => {
   }
   return dates;
 };
-
-// export const GetHrs =

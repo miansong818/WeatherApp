@@ -37,14 +37,10 @@ export default function NextDays({
               <p className="text-sm leading-6 text-gray-900">
                 {day.weather[0].description}
               </p>
-              {/* </div> */}
-
-              {/* <div className="sm:flex sm:flex-col-2 gap-x-4 sm:items-center"></div> */}
             </li>
           ))}
         </ul>
       </div>
-      {/* </div> */}
     </section>
   );
 }
