@@ -1,3 +1,11 @@
+# How to launch the Weather Application
+
+## Steps:
+1. Add new `.env` file, copy the content from `.env.example` file.
+Replace the `VITE_API_KEY` with  `482944e26d320a80bd5e4f23b3de7d1f`
+2. Run `npm i` to intall the dependencies.
+3. Run `npm run dev` to launch the localhost.
+   
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -28,8 +36,4 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-Steps:
-1. Add new `.env` file, copy the content from `.env.example` file.
-Replace the `VITE_API_KEY` with  `482944e26d320a80bd5e4f23b3de7d1f`
-2. Run `npm i` to intall the dependencies.
-3. Run `npm run dev` to launch the localhost.
+
