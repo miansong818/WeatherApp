@@ -2,7 +2,7 @@
 Use Vite, React 18 (TypeScript based), tailwind CSS to build this application
 
 - Use nvm for node version control, node -v 18.19.0
-- Use jest as the Unit test framework(configration is ready to be tested, and a simple test case, snapshot created).
+- Use jest as the Unit test framework(configration is ready, `npm run test` to be tested, and a simple test case, snapshot created).
 - Use the `OpenWeather` API
 
 - Feature:
