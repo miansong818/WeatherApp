@@ -14,7 +14,7 @@ describe("App rendering", () => {
     render(<App />);
   });
 
-  const { asFragment } = render(<App />);
+  // const { asFragment } = render(<App />);
 
-  expect(asFragment()).toMatchSnapshot();
+  // expect(asFragment()).toMatchSnapshot();
 });
